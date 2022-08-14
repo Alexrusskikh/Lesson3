@@ -1,13 +1,6 @@
-#Выбор разделителя
-my_split = input('Введите вариант разделителя элементов - "," или ";" или "/": ')
-#  ввод  ряда цифр через выбранный разделитель
-my_list = input("Введите ряд цифр через Ваш разделитель: ").split(my_split)
-#удалим повторы элементов
-new_set = set(my_list)
-#создадим  новый список с целочисленными элементами
-new_list = []
-for element in new_set:
-    new_list.append(int(element))
-#вывод сортированного списка
-print(sorted(new_list))
+import re
+my_list = input("Введите ряд цифр через запятую: ")
+#несколько разделителей не получается назначить re.split(',|,|/', str)
+my_list = re.split("[,!?:/;]", my_list)
+print(sorted(set(my_list)))
 

@@ -1,7 +1,23 @@
-list_1 = input('Введите элементы 1-го списка через запятую: ')
-list_2 = input('Введите элементы 2-го списка через запятую: ')
-print(f'Первый список:{list_1}')
-print(f'Второй список:{list_2}')
-set1=set(list_1)
-set2=set(list_2)
-print("Отсутствуют во втором  списке:", set1-set2)
+# создаем списки
+list_1 = input('Введите элементы 1-го списка через запятую: ').split(',')
+list_2 = input('Введите элементы 2-го списка через запятую: ').split(',')
+print(list_1, list_2)
+res = []
+for el in list_1:
+    if el not in list_2:
+        res.append(el)
+list_1 = res
+print(list_1, list_2)
+
+
+#Вариант
+# создаем списки
+list_1 = input('Введите элементы 1-го списка через запятую: ').split(',')
+list_2 = input('Введите элементы 2-го списка через запятую: ').split(',')
+print(list_1, list_2)
+#копия list_1, но не понял  зачем, для наглядности?
+res = list_1[:]
+for el in list_1[:]:
+    if el in list_2:
+        res.remove(el)
+print(list_1, list_2, res)
