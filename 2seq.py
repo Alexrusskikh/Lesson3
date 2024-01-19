@@ -1,6 +1,10 @@
-import re
-my_list = input("Введите ряд цифр через запятую: ")
-#несколько разделителей не получается назначить re.split(',|,|/', str)
-my_list = re.split("[,!?:/;]", my_list)
-print(sorted(set(my_list)))
+import  re
+num_str = input('Введите ряд чисел через запятую: ')
+num_str_list = re.split('[,!?:/;]', num_str)
+list_num = [int(n) for n in num_str_list]
+result = list(set(list_num))
+for el in  result:
+    print(el, end=', ')
+
+
 
